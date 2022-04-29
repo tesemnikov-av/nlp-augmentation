@@ -17,4 +17,4 @@ How to run web application:
 # streamlit run app.py
 ```
 
-<img src="screen.png" width="450"/>
+<img src="screen.png" width="850"/>
