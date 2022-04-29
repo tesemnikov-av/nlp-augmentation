@@ -18,7 +18,7 @@ Data augmentation techniques are used to generate additional, synthetic data usi
 
 In this method, we translate the text data to some language and then translate it back to the original language. This can help to generate textual data with different words while preserving the context of the text data. 
 
-<img src="backtranslation.png" width="350"/>
+<img src="png\backtranslation.png" width="350"/>
 
 ### Synonym Replacement
 
@@ -29,4 +29,4 @@ How to run web application:
 # streamlit run app.py
 ```
 
-<img src="screen.png" width="850"/>
+<img src="png\screen.png" width="850"/>
