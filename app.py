@@ -116,12 +116,10 @@ def ruwordnet_augmentation(text, model='RuWordNet', N=5):
 
 
 
-option = st.sidebar.selectbox(
-     'Which model will be use?',
-     ('RuWordNet', 'Word2Vec'))
- 
-N = st.number_input('Insert a number', min_value=1, max_value=30, value=10)
-
+option = st.sidebar.selectbox('Which model will be use?',('RuWordNet', 'Word2Vec'))
+limit = st.number_input('Limit: ', min_value=1, max_value=30, value=10)
 text = st.text_area(label='Input text here', value='веселый молочник', height=200)
+
 if st.button("Process"):
-    st.write(ruwordnet_augmentation(text, model=option, N=N))
+    st.write(ruwordnet_augmentation(text, model=option, N=limit))
+    
