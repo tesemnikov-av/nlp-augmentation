@@ -4,9 +4,13 @@
 
 Data augmentation techniques are used to generate additional, synthetic data using the data you have. Augmentation methods are super popular in computer vision applications but they are just as powerful for NLP. 
 
+<img src="dataset.png" width="350"/>
+
 ### Back translation
 
 In this method, we translate the text data to some language and then translate it back to the original language. This can help to generate textual data with different words while preserving the context of the text data. 
+
+<img src="backtranslation.png" width="350"/>
 
 ### Synonym Replacement
 
