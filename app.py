@@ -1,14 +1,12 @@
 import streamlit as st
-
-st.set_page_config(page_title="Text Augmentation NLP", layout="wide")
-
-st.title("Text Augmentation NLP")
-
 from ruwordnet import RuWordNet
 import numpy as np
 import spacy
 import pymorphy2
 import gensim
+
+st.set_page_config(page_title="Text Augmentation NLP", layout="wide")
+st.title("Text Augmentation NLP")
 
 model = gensim.models.KeyedVectors.load_word2vec_format('ruwikiruscorpora_upos_cbow_300_20_2017.bin.gz', binary=True)
 morph = pymorphy2.MorphAnalyzer()
@@ -95,12 +93,14 @@ def ruwordnet_augmentation(text, model='RuWordNet', N=5):
     """
     result = []
     doc = nlp(text)
+    
     for _ in range(N):
         paraphrases = []
+        
         for word in doc:
             try:
-
                 lemma = word.lemma_.replace('ё', 'е')
+                
                 if model == 'RuWordNet':
                     synonym = get_synonyms(lemma)
                 elif model == 'Word2Vec':
@@ -108,13 +108,13 @@ def ruwordnet_augmentation(text, model='RuWordNet', N=5):
 
                 synonym_inflect = inflect_as(word.text, synonym)
                 paraphrases.append(synonym_inflect)
+                
             except KeyError:
                 paraphrases.append(word.text)
+                
         result.append(' '.join(paraphrases))
 
     return list(set(result))
-
-
 
 option = st.sidebar.selectbox('Which model will be use?',('RuWordNet', 'Word2Vec'))
 limit = st.number_input('Limit: ', min_value=1, max_value=30, value=10)
@@ -122,4 +122,3 @@ text = st.text_area(label='Input text here', value='веселый молочн�
 
 if st.button("Process"):
     st.write(ruwordnet_augmentation(text, model=option, N=limit))
-    
