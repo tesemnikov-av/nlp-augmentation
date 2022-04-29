@@ -10,6 +10,7 @@ Dependencies:
   + pymorphy2
 
 
+How to run web application:
 ```python
 # streamlit run app.py
 ```
