@@ -1,6 +1,6 @@
 # Text Augmentation data for NLP
 
-<img src="png\logo.png" width="150"/>
+<img src="png\logo_nlp.png" width="150"/>
 
 
 Data augmentation techniques are used to generate additional, synthetic data using the data you have. Augmentation methods are super popular in computer vision applications but they are just as powerful for NLP. 
