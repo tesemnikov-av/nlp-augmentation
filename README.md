@@ -32,7 +32,7 @@ How to run web application:
 
 How to run from CLI:
 ```python
-# python3 app.py --text='веселый молочник'
+# python3 augmentation.py --text='веселый молочник'
 мажорный с/х производитель
 радостный сельский производитель
 радостный сельскохозяйственный товаропроизводитель
